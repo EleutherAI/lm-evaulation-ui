@@ -8,15 +8,18 @@ let template_model_config = {
   html: [
     {
       "<>": "li",
-      html: "model: ${model}",
+      html: "model: <strong>${model}</strong>",
     },
-    { "<>": "li", html: "model_args: ${model_args}" },
-    { "<>": "li", html: "num_fewshot: ${num_fewshot}" },
-    { "<>": "li", html: "batch_size: ${batch_size}" },
-    { "<>": "li", html: "device: ${device}" },
-    { "<>": "li", html: "no_cache: ${no_cache}" },
-    { "<>": "li", html: "limit: ${limit}" },
-    { "<>": "li", html: "bootstrap_iters: ${bootstrap_iters}" },
+    { "<>": "li", html: "model_args: <strong>${model_args}</strong>" },
+    { "<>": "li", html: "num_fewshot: <strong>${num_fewshot}</strong>" },
+    { "<>": "li", html: "batch_size: ${batch_size}</strong>" },
+    { "<>": "li", html: "device: <strong>${device}</strong>" },
+    { "<>": "li", html: "no_cache: <strong>${no_cache}</strong>" },
+    { "<>": "li", html: "limit: <strong>${limit}</strong>" },
+    {
+      "<>": "li",
+      html: "bootstrap_iters: <strong>${bootstrap_iters}</strong>",
+    },
   ],
 };
 
@@ -94,7 +97,10 @@ if (fileName) {
   let rawdata = fs.readFileSync(fileName);
   let parsedData = JSON.parse(rawdata);
 
-  writeHtmlFromScoresJson(parsedData, `output/${fileName}_output.html`);
+  writeHtmlFromScoresJson(
+    parsedData,
+    `output/${fileName.replace(".json", "")}_output.html`
+  );
 }
 
 function writeHtmlFromScoresJson(jsonFile, htmlTableFile) {

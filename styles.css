@@ -42,7 +42,16 @@ p {
 }
 
 .model-config {
-  margin-left: 20px;
+}
+
+.model-config ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.model-config ul li {
+  margin-right: 12px;
 }
 
 .output-table {
