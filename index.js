@@ -55,14 +55,18 @@ let template_table_body = {
         {
           "<>": "td",
           html: (obj) => {
-            return json2html.toText(Object.values(obj)[0]);
+            return json2html.toText(
+              Math.floor(Object.values(obj)[0] * 100) / 100
+            );
           },
         },
         { "<>": "td", html: "±" },
         {
           "<>": "td",
           html: (obj) => {
-            return json2html.toText(Object.values(obj)[1]);
+            return json2html.toText(
+              Math.floor(Object.values(obj)[1] * 100) / 100
+            );
           },
         },
       ],
@@ -81,14 +85,18 @@ let template_table_body = {
         {
           "<>": "td",
           html: (obj) => {
-            return json2html.toText(Object.values(obj)[2]);
+            return json2html.toText(
+              Math.floor(Object.values(obj)[2] * 100) / 100
+            );
           },
         },
         { "<>": "td", html: "±" },
         {
           "<>": "td",
           html: (obj) => {
-            return json2html.toText(Object.values(obj)[3]);
+            return json2html.toText(
+              Math.floor(Object.values(obj)[3] * 100) / 100
+            );
           },
         },
       ],
